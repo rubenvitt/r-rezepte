@@ -81,8 +81,8 @@ export const recipes: Recipe[] = [
       {
         title: "Himbeermarmelade",
         items: [
-          { amount: 340, unit: "g", text: "frische Himbeeren" },
-          { amount: 66, unit: "g", text: "Zucker" },
+          { amount: 200, unit: "g", text: "frische Himbeeren" },
+          { amount: 30, unit: "g", text: "Zucker" },
         ],
       },
       {
@@ -92,9 +92,9 @@ export const recipes: Recipe[] = [
           { amount: 0.5, unit: " TL", text: "Backpulver" },
           { amount: 0.5, unit: " TL", text: "Natron" },
           { amount: 0.5, unit: " TL", text: "Salz" },
-          { amount: 200, unit: "g", text: "Zucker" },
-          { amount: 227, unit: "g", text: "Butter, sehr weich" },
-          { amount: 1, unit: "", text: "Ei, zimmerwarm" },
+          { amount: 120, unit: "g", text: "Zucker" },
+          { amount: 180, unit: "g", text: "Butter, sehr weich" },
+          { amount: 1, unit: "", text: "Ei (größer), zimmerwarm" },
           { amount: 2, unit: " TL", text: "Vanilleextrakt" },
           { amount: 50, unit: "g", text: "Zucker", note: "(zum Wälzen)" },
         ],
@@ -117,9 +117,9 @@ export const recipes: Recipe[] = [
         title: "Himbeermarmelade",
         steps: [
           "Himbeeren in einen mittelgroßen Topf geben und bei mittlerer bis niedriger Hitze ca. 5 Minuten erwärmen. Am Anfang zerdrücken, bis die Beeren zerfallen und flüssig werden.",
-          "Durch ein Sieb in eine Schüssel passieren – kräftig andrücken, um die Kerne loszuwerden. Du solltest etwa 180 ml Flüssigkeit erhalten.",
+          "Durch ein Sieb in eine Schüssel passieren – kräftig andrücken, um die Kerne loszuwerden. Du solltest etwa 105 ml Flüssigkeit erhalten.",
           "Flüssigkeit zurück in den Topf (vom Herd) geben und den Zucker einrühren.",
-          "Bei mittlerer Hitze 15–17 Minuten einkochen, bis die Marmelade dick ist. Am Ende sollten etwa 80 ml übrig sein.",
+          "Bei mittlerer Hitze einkochen, bis die Marmelade dick ist. Am Ende sollten etwa 45 ml übrig sein.",
           "Vom Herd nehmen und im Kühlschrank abkühlen lassen, während du am Teig arbeitest.",
         ],
       },
@@ -153,6 +153,10 @@ export const recipes: Recipe[] = [
       {
         title: "Butter sehr weich",
         text: "So weich, dass du mühelos mit dem Finger reindrücken kannst. Zu feste Butter lässt sich nicht richtig cremig aufschlagen – die Cookies werden dann dicht statt luftig.",
+      },
+      {
+        title: "Butter weiter reduzieren",
+        text: "Mit einem größeren Ei (L statt M) funktionieren vermutlich auch 160g Butter – die zusätzliche Flüssigkeit aus dem Ei gleicht den Unterschied aus. Muss noch getestet werden.",
       },
       {
         title: "Vollständig auskühlen lassen",
