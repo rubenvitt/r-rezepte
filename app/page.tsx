@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { recipes } from "@/lib/recipes";
 
@@ -34,9 +35,22 @@ export default function HomePage() {
           <Link
             key={r.slug}
             href={`/rezepte/${r.slug}`}
-            className="recipe-card"
+            className={
+              r.heroImage ? "recipe-card recipe-card--with-image" : "recipe-card"
+            }
           >
             <div className="n">{r.number}</div>
+            {r.heroImage && (
+              <div className="thumb">
+                <Image
+                  src={r.heroImage.src}
+                  alt={r.heroImage.alt}
+                  width={r.heroImage.width}
+                  height={r.heroImage.height}
+                  sizes="120px"
+                />
+              </div>
+            )}
             <div>
               <div className="meta-row">
                 {r.category} · {r.totalTime} · {r.yieldBase} {r.yieldUnit}

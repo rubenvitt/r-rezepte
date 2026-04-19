@@ -18,6 +18,7 @@ export async function generateMetadata(
   const { slug } = await props.params;
   const recipe = getRecipe(slug);
   if (!recipe) return {};
+  const images = recipe.heroImage ? [recipe.heroImage.src] : undefined;
   return {
     title: recipe.title,
     description: recipe.schema.description,
@@ -25,11 +26,13 @@ export async function generateMetadata(
       type: "article",
       title: recipe.title,
       description: recipe.schema.description,
+      ...(images ? { images } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: recipe.title,
       description: recipe.schema.description,
+      ...(images ? { images } : {}),
     },
   };
 }
@@ -56,6 +59,7 @@ export default async function RecipePage(
     inLanguage: "de-DE",
     author: { "@type": "Organization", name: recipe.schema.author },
     ...(recipe.schema.isBasedOn ? { isBasedOn: recipe.schema.isBasedOn } : {}),
+    ...(recipe.heroImage ? { image: [recipe.heroImage.src] } : {}),
     recipeIngredient: schemaIngredients(recipe),
     recipeInstructions: schemaInstructions(recipe),
   };

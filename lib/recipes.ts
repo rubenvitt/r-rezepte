@@ -21,6 +21,13 @@ export type Tip = {
   text: string;
 };
 
+export type RecipeImage = {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 export type Recipe = {
   slug: string;
   number: string;
@@ -35,6 +42,7 @@ export type Recipe = {
   yieldBase: number;
   yieldUnit: string;
   cuisine: string;
+  heroImage?: RecipeImage;
   ingredientGroups: IngredientGroup[];
   stepSections: StepSection[];
   tips: Tip[];
@@ -66,6 +74,12 @@ export const recipes: Recipe[] = [
     yieldBase: 20,
     yieldUnit: "Stück",
     cuisine: "Amerikanisch",
+    heroImage: {
+      src: "/rezepte/himbeer-cheesecake-cookies.png",
+      alt: "Vier Himbeer-Cheesecake-Cookies auf einem hellen Keramikteller, einer aufgebrochen, mit cremigem weißem Schokoladen-Frischkäsekern, Himbeerstreifen, frischen Himbeeren und weißen Schokostücken auf Leinentuch.",
+      width: 1024,
+      height: 1536,
+    },
     ingredientGroups: [
       {
         title: "Cheesecake-Füllung",

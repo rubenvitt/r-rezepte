@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import {
@@ -106,7 +107,9 @@ export default function RecipeView({ recipe }: Props) {
         </div>
       </header>
 
-      <section className="hero">
+      <section
+        className={recipe.heroImage ? "hero hero--with-image" : "hero"}
+      >
         <div className="kicker reveal d1">{recipe.kicker}</div>
         <h1 className="title reveal d2">
           {recipe.titleLines.map((line, i) => {
@@ -124,6 +127,20 @@ export default function RecipeView({ recipe }: Props) {
           <span className="drop">{recipe.description.charAt(0)}</span>
           {recipe.description.slice(1)}
         </p>
+
+        {recipe.heroImage && (
+          <figure className="hero-figure reveal d3">
+            <Image
+              src={recipe.heroImage.src}
+              alt={recipe.heroImage.alt}
+              width={recipe.heroImage.width}
+              height={recipe.heroImage.height}
+              priority
+              sizes="(min-width: 920px) 480px, 100vw"
+            />
+            <figcaption>№ {recipe.number}</figcaption>
+          </figure>
+        )}
 
         <div className="meta reveal d4">
           <div>
